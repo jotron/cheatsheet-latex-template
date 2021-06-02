@@ -1,98 +1,18 @@
 % % % % % % % % % % % % % % % % % % %
 %                                   %
 % cheatsheet-latex-template         %
-% V. 0.1                            %
+% V. 0.2                            %
 %                                   %
 % % % % % % % % % % % % % % % % % % %
 
-\documentclass[a4paper,landscape,8pt]{extarticle}
+% The compact-layout class contains all layout stuff
+\documentclass{compactlayout}
 
-\usepackage[a4paper,margin=0.7cm]{geometry}
+% The compact-style package contains layout independent extras
+\usepackage{compactstyle}
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyfoot[R]{\vspace{-35pt}\Huge\thepage}
-
-\usepackage{multicol}
-\setlength\columnsep{20pt}
-\setlength{\columnseprule}{0.1pt} 
-
-\setlength\parindent{0pt}
-
-\usepackage[ngerman]{babel} % Silbentrennung
-\usepackage[utf8]{inputenc} % Umlaute
-\usepackage{microtype}
-
-\usepackage{hyperref}
-
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-
-% Environment for long comments
-\usepackage{comment}
-
-\usepackage{amsmath}
-\usepackage{amssymb}
-
-\usepackage{cancel}
-
-\usepackage[table, dvipsnames]{xcolor}
-
-% Pseudocode
-\usepackage{algpseudocode}
-\usepackage{algorithmicx}
-
-% True Code
-\usepackage{listings}
-\lstset{
-  language=Haskell,
-  basicstyle=\ttfamily\small,
-  basewidth=0.5em, % compress
-  keywordstyle=\color{magenta}
-  }
-\usepackage{bold-extra}
-
-
-\usepackage{booktabs}
-
-\newenvironment{rcases}
-  {\left.\begin{aligned}}
-  {\end{aligned}\right\rbrace}
-  
-\usepackage{enumitem}
-\setlist{noitemsep,topsep=3pt,parsep=3pt,partopsep=3pt,leftmargin=18pt}
-\renewcommand\labelitemi{{\boldmath$\cdot$}}
-\newcommand{\listarrow}{
-\smash{\scalebox{1.5}[1.75]{\rotatebox[origin=c]{180}{$\Lsh$}}}
-}
-
-\usepackage{xifthen}
-\include{custom-commands}
-
-\usepackage{varwidth}
-
-% remove command
-\renewcommand*{\newpage}{ \ }
-%\renewcommand*{\part}{\ }
-
-
-% package to define custom environments
-\usepackage{environ}
-
-% boolean variable to show contents
-\newif\ifshowwarmup
-\showwarmupfalse % set it to false
-
-% definition of custom environment
-\NewEnviron{warmup}{\ifshowwarmup \BODY \fi}
-
-% shorthand for custom environment
-%\def\WU#1\UW{\begin{warmup}#1\end{warmup}}
-
-% Use custom numbering
-\setcounter{secnumdepth}{2}
-
+% Path to images
+\graphicspath{ {./img/} }
 
 % % % % % % % % % % % % % % % % % % %
 %                                   %
@@ -105,24 +25,11 @@
 
 \begin{document}
 
-\setlength{\belowdisplayskip}{4pt} \setlength{\belowdisplayshortskip}{4pt}
-\setlength{\abovedisplayskip}{4pt} \setlength{\abovedisplayshortskip}{4pt}
-
-\graphicspath{ {./img/} }
-
-% allow page break in align* environment
-\allowdisplaybreaks
-
 \begin{multicols*}{4}
-\raggedcolumns
 
 \maketitle
 
-\setcounter{tocdepth}{2}
-%\tableofcontents
-
 \include{sections/1_examples}
-
 
 \end{multicols*}
 \end{document}
