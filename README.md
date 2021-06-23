@@ -1,2 +1,5 @@
 # cheatsheet-latex-template
-LaTex template for cheatsheets and summaries.
+LaTeX template for cheatsheets and summaries.
+
+![document](document.png)
+
